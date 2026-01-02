@@ -12,12 +12,12 @@ logger = logging.getLogger(__name__)
 
 # Map service types to provider classes
 PROVIDER_MAPPING = {
-    "coingecko_free": providers.CoinGeckoFreeProvider,
-    "coingecko_pro": providers.CoinGeckoProProvider,
-    "transitive": providers.TransitiveRateProvider,
-    "frankfurter": providers.FrankfurterProvider,
-    "twelvedata": providers.TwelveDataProvider,
-    "twelvedatamarkets": providers.TwelveDataMarketsProvider,
+    "coingecko_free": providers.coingecko.CoinGeckoFreeProvider,
+    "coingecko_pro": providers.coingecko.CoinGeckoProProvider,
+    "transitive": providers.transitive_rate.TransitiveRateProvider,
+    "frankfurter": providers.frankfurter.FrankfurterProvider,
+    "twelvedata": providers.twelvedata.TwelveDataProvider,
+    "twelvedatamarkets": providers.twelvedata.TwelveDataMarketsProvider,
 }
 
 
