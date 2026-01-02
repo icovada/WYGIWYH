@@ -101,6 +101,7 @@ class ExchangeRateService(models.Model):
     class ServiceType(models.TextChoices):
         COINGECKO_FREE = "coingecko_free", "CoinGecko (Demo/Free)"
         COINGECKO_PRO = "coingecko_pro", "CoinGecko (Pro)"
+        PICTET = "pictet", "Pictet",
         TRANSITIVE = "transitive", "Transitive (Calculated from Existing Rates)"
         FRANKFURTER = "frankfurter", "Frankfurter"
         TWELVEDATA = "twelvedata", "TwelveData"

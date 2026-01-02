@@ -3,6 +3,7 @@ import time
 
 import requests
 from decimal import Decimal
+from typing import Tuple, List
 
 from django.db.models import QuerySet
 

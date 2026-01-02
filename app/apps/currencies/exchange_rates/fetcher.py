@@ -4,7 +4,11 @@ from datetime import timedelta
 from django.db.models import QuerySet
 from django.utils import timezone
 
-import apps.currencies.exchange_rates.providers as providers
+from apps.currencies.exchange_rates.providers.coingecko import CoinGeckoFreeProvider, CoinGeckoProProvider
+from apps.currencies.exchange_rates.providers.frankfurter import FrankfurterProvider
+from apps.currencies.exchange_rates.providers.pictet import PictetProvider
+from apps.currencies.exchange_rates.providers.transitive_rate import TransitiveRateProvider
+from apps.currencies.exchange_rates.providers.twelvedata import TwelveDataProvider, TwelveDataMarketsProvider
 from apps.currencies.models import ExchangeRateService, ExchangeRate, Currency
 
 logger = logging.getLogger(__name__)
@@ -12,12 +16,13 @@ logger = logging.getLogger(__name__)
 
 # Map service types to provider classes
 PROVIDER_MAPPING = {
-    "coingecko_free": providers.coingecko.CoinGeckoFreeProvider,
-    "coingecko_pro": providers.coingecko.CoinGeckoProProvider,
-    "transitive": providers.transitive_rate.TransitiveRateProvider,
-    "frankfurter": providers.frankfurter.FrankfurterProvider,
-    "twelvedata": providers.twelvedata.TwelveDataProvider,
-    "twelvedatamarkets": providers.twelvedata.TwelveDataMarketsProvider,
+    "coingecko_free": CoinGeckoFreeProvider,
+    "coingecko_pro": CoinGeckoProProvider,
+    "pictet": PictetProvider,
+    "transitive": TransitiveRateProvider,
+    "frankfurter": FrankfurterProvider,
+    "twelvedata": TwelveDataProvider,
+    "twelvedatamarkets": TwelveDataMarketsProvider,
 }
 
 
