@@ -86,7 +86,6 @@ class PictetProvider(ExchangeRateProvider):
 
         for target_currency in target_currencies:
             if target_currency.exchange_currency in exchange_currencies:
-                # TODO: add try block
                 self.query.variable_values = {
                     "context": {
                         "country": "IT",
